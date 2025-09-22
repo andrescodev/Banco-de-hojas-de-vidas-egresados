@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banco de hojas de vidas egresados</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-4xl mx-auto bg-white p-8 rounded shadow">
+    <h1 class="text-2xl font-bold text-center mb-6 uppercase">Banco de hojas de vidas egresados</h1>
+
+    <!-- Contenedor para mostrar alertas -->
+    <div id="alerta" class="hidden p-3 mb-4 rounded text-center font-semibold"></div>
+
+    <form id="remisionForm" class="space-y-6">
+      <!-- Nombre y Apellido -->
+      <div>
+        <label for="nombre_apellido" class="block text-sm font-medium text-gray-700">
+          Nombre y Apellido <span class="text-red-500">*</span>
+        </label>
+        <input type="text" id="nombre_apellido" name="nombre_apellido" required
+          class="mt-1 w-full border border-gray-300 rounded px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      </div>
+
+      <!-- Año en que terminó el programa -->
+      <div>
+        <label for="anio_programa" class="block text-sm font-medium text-gray-700">
+          Año en que terminó el programa <span class="text-red-500">*</span>
+        </label>
+        <input type="number" id="anio_programa" name="anio_programa" min="1900" max="2100" required
+          class="mt-1 w-full border border-gray-300 rounded px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      </div>
+
+      <!-- Cédula -->
+      <div>
+        <label for="cedula" class="block text-sm font-medium text-gray-700">
+          Cédula <span class="text-red-500">*</span>
+        </label>
+        <input type="text" id="cedula" name="cedula" required
+          class="mt-1 w-full border border-gray-300 rounded px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      </div>
+
+      <!-- Adjuntar PDF o Word -->
+      <div>
+        <label for="adjunto" class="block text-sm font-medium text-gray-700">
+          Adjuntar PDF o Word <span class="text-red-500">*</span>
+        </label>
+        <input type="file" id="adjunto" name="adjunto" accept=".pdf,.doc,.docx" required
+          class="mt-1 w-full border border-gray-300 rounded px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      </div>
+
+      <!-- Referencias Personales -->
+      <div>
+        <label for="referencias" class="block text-sm font-medium text-gray-700">
+          Referencias Personales <span class="text-red-500">*</span>
+        </label>
+        <textarea id="referencias" name="referencias" rows="3" required
+          class="mt-1 w-full border border-gray-300 rounded px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"></textarea>
+      </div>
+
+      <!-- Botón -->
+      <div>
+        <button type="submit"
+          class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Enviar</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
